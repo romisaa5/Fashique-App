@@ -1,4 +1,4 @@
-import 'package:e_commerce/Featured/Home/presentation/widgets/custom_red_container_widget.dart';
+import 'package:e_commerce/Featured/Home/presentation/widgets/custom_container_widget.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/stars_rate.dart';
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/constnts.dart';
@@ -54,7 +54,7 @@ class _CustomListItemNewHomeState extends State<CustomListItemNewHome> {
                     ),
                     CustomcontainerWidget(
                       color: Colors.black87,
-                        value: 'New', product: widget.product),
+                        value: 'New',),
                     Positioned(
                       top: 155.h,
                       right: 5.w,

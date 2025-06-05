@@ -28,32 +28,14 @@ abstract class AppRouter {
   static final bottnavbar = '/bottomnavbar';
   static final detailsScreen = '/detailsScreen';
   static final router = GoRouter(
-    initialLocation: firstScreen,
+    initialLocation: bottnavbar,
     routes: [
-      GoRoute(
-        path: firstScreen,
-        builder: (context, state) => FirstScreen(),
-      ),
-      GoRoute(
-        path: secondScreen,
-        builder: (context, state) => SecondScreen(),
-      ),
-      GoRoute(
-        path: thirdScreen,
-        builder: (context, state) => ThirdScreen(),
-      ),
-      GoRoute(
-        path: welcomeView,
-        builder: (context, state) => WelcomeView(),
-      ),
-      GoRoute(
-        path: loginView,
-        builder: (context, state) => LoginView(),
-      ),
-      GoRoute(
-        path: registerView,
-        builder: (context, state) => RegisterView(),
-      ),
+      GoRoute(path: firstScreen, builder: (context, state) => FirstScreen()),
+      GoRoute(path: secondScreen, builder: (context, state) => SecondScreen()),
+      GoRoute(path: thirdScreen, builder: (context, state) => ThirdScreen()),
+      GoRoute(path: welcomeView, builder: (context, state) => WelcomeView()),
+      GoRoute(path: loginView, builder: (context, state) => LoginView()),
+      GoRoute(path: registerView, builder: (context, state) => RegisterView()),
       GoRoute(
         path: forgetpasssword,
         builder: (context, state) => ForgetPassword(),

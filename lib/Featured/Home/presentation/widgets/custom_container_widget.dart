@@ -1,4 +1,3 @@
-import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomcontainerWidget extends StatelessWidget {
   const CustomcontainerWidget(
-      {super.key, required this.product, required this.value, required this.color});
-  final Product product;
+      {super.key,  required this.value, required this.color});
+
   final String value;
   final Color color;
   @override
