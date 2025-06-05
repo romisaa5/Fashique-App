@@ -51,7 +51,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   color: Colors.grey,
                   activeColor: Colors.white,
                   iconSize: 24,
-                  tabBackgroundColor: KprimaryColor.withValues(alpha: 0.85),
+                  tabBackgroundColor: KprimaryColor,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   tabs: [
                     GButton(icon: Icons.home, text: 'Home'),
