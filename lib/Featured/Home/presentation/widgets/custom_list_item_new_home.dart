@@ -1,4 +1,5 @@
 import 'package:e_commerce/Featured/Home/presentation/widgets/custom_container_widget.dart';
+import 'package:e_commerce/core/widgets/custom_favorite_icon.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/stars_rate.dart';
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/constnts.dart';
@@ -6,17 +7,11 @@ import 'package:e_commerce/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomListItemNewHome extends StatefulWidget {
+class CustomListItemNewHome extends StatelessWidget {
   const CustomListItemNewHome({super.key, required this.product});
 
   final Product product;
 
-  @override
-  State<CustomListItemNewHome> createState() => _CustomListItemNewHomeState();
-}
-
-class _CustomListItemNewHomeState extends State<CustomListItemNewHome> {
-  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -46,7 +41,7 @@ class _CustomListItemNewHomeState extends State<CustomListItemNewHome> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(12.r),
                       child: Image.asset(
-                        widget.product.imageUrl,
+                        product.imageUrl,
                         height: 184.h,
                         width: double.infinity,
                         fit: BoxFit.cover,
@@ -58,34 +53,7 @@ class _CustomListItemNewHomeState extends State<CustomListItemNewHome> {
                     Positioned(
                       top: 155.h,
                       right: 5.w,
-                      child: Container(
-                        width: 36.w,
-                        height: 36.h,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black26,
-                              blurRadius: 3,
-                            )
-                          ],
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              isFavorite = !isFavorite;
-                            });
-                          },
-                          icon: Icon(
-                            isFavorite
-                                ? Icons.favorite
-                                : Icons.favorite_border_outlined,
-                            color: isFavorite ? Colors.red : Colors.black45,
-                            size: 18,
-                          ),
-                        ),
-                      ),
+                      child: CustomFavoriteIcon()
                     ),
                   ],
                 ),
@@ -96,16 +64,16 @@ class _CustomListItemNewHomeState extends State<CustomListItemNewHome> {
                     children: [
                       StarsRate(),
                       Text(
-                        widget.product.category,
+                        product.category,
                         style: Styles.textStyle12.copyWith(color: Colors.grey),
                       ),
                       Text(
-                        widget.product.title,
+                        product.title,
                         style: Styles.textStyle14
                             .copyWith(fontWeight: FontWeight.w600),
                       ),
                       Text(
-                        '${widget.product.price} \$',
+                        '${product.price} \$',
                         style:
                             Styles.textStyle14.copyWith(color: KprimaryColor),
                       )

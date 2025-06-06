@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/custom_container_widget.dart';
+import 'package:e_commerce/core/widgets/custom_favorite_icon.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/stars_rate.dart';
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/utils/styles.dart';
@@ -50,17 +51,39 @@ class CustomCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
+                  spacing: 2.h,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('T-shirt', style: Styles.textStyle16),
                     StarsRate(),
+                    Text(
+                      '120 \$',
+                      style: Styles.textStyle14.copyWith(color: KprimaryColor),
+                    ),
+                    Text(
+                      '150\$',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
                   ],
                 ),
-                CustomButton(
-                  text: 'Buy Now',
-                  color: KprimaryColor,
-                  width: 110.w,
-                  borderreduis: 16,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  spacing: 15.h,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: CustomFavoriteIcon(),
+                    ),
+                    CustomButton(
+                      text: 'Buy Now',
+                      color: KprimaryColor,
+                      width: 110.w,
+                      borderreduis: 16,
+                    ),
+                  ],
                 ),
               ],
             ),
