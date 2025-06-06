@@ -6,6 +6,8 @@ import 'package:e_commerce/Featured/Auth/Login/presentation/views/login_view.dar
 import 'package:e_commerce/Featured/Auth/Register/presentation/views/register_view.dart';
 import 'package:e_commerce/Featured/Home/presentation/Views/product_details.dart';
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
+import 'package:e_commerce/Featured/Profile/presentation/views/my_orders_view.dart';
+import 'package:e_commerce/Featured/Profile/presentation/views/settings_view.dart';
 import 'package:e_commerce/Featured/onboarding/presentation/views/first_screen.dart';
 import 'package:e_commerce/Featured/onboarding/presentation/views/second_screen.dart';
 import 'package:e_commerce/Featured/onboarding/presentation/views/third_screen.dart';
@@ -27,6 +29,8 @@ abstract class AppRouter {
   static final setnewpassword = '/setnewpassword';
   static final bottnavbar = '/bottomnavbar';
   static final detailsScreen = '/detailsScreen';
+  static final settingsScreen = '/settingsScreen';
+  static final ordersScreen = '/ordersScreen';
   static final router = GoRouter(
     initialLocation: bottnavbar,
     routes: [
@@ -56,6 +60,11 @@ abstract class AppRouter {
         path: bottnavbar,
         builder: (context, state) => CustomBottomNavBar(),
       ),
+      GoRoute(
+        path: settingsScreen,
+        builder: (context, state) => SettingsView(),
+      ),
+      GoRoute(path: ordersScreen, builder: (context, state) => MyOrdersView()),
       GoRoute(
         path: detailsScreen,
         builder: (context, state) {

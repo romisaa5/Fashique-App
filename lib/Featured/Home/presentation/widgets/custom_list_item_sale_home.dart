@@ -59,7 +59,7 @@ class _CustomListItemSaleHomeState extends State<CustomListItemSaleHome> {
                         ),
                       ),
                       CustomcontainerWidget(
-                        color: KprimaryColor,
+                        color: kprimaryColor,
                         value: '- ${widget.product.discountValue}%',
                       ),
                       Positioned(
@@ -123,7 +123,7 @@ class _CustomListItemSaleHomeState extends State<CustomListItemSaleHome> {
                             Text(
                               '${widget.product.price} \$',
                               style: Styles.textStyle14.copyWith(
-                                color: KprimaryColor,
+                                color: kprimaryColor,
                               ),
                             ),
                           ],

@@ -20,7 +20,7 @@ class ListOfCategories extends StatelessWidget {
               width: 120,
               height: 40,
               decoration: BoxDecoration(
-                color: KsecondryColor,
+                color: kSecondryColor,
                 borderRadius: BorderRadius.circular(16.r),
               ),
               child: Center(

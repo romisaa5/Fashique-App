@@ -22,11 +22,7 @@ class CustomListItemNewHome extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.r),
           color: Colors.white,
           boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 4,
-              spreadRadius: 1,
-            )
+            BoxShadow(color: Colors.black12, blurRadius: 4, spreadRadius: 1),
           ],
         ),
         child: Stack(
@@ -47,13 +43,11 @@ class CustomListItemNewHome extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    CustomcontainerWidget(
-                      color: Colors.black87,
-                        value: 'New',),
+                    CustomcontainerWidget(color: Colors.black87, value: 'New'),
                     Positioned(
                       top: 155.h,
                       right: 5.w,
-                      child: CustomFavoriteIcon()
+                      child: CustomFavoriteIcon(),
                     ),
                   ],
                 ),
@@ -69,17 +63,19 @@ class CustomListItemNewHome extends StatelessWidget {
                       ),
                       Text(
                         product.title,
-                        style: Styles.textStyle14
-                            .copyWith(fontWeight: FontWeight.w600),
+                        style: Styles.textStyle14.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Text(
                         '${product.price} \$',
-                        style:
-                            Styles.textStyle14.copyWith(color: KprimaryColor),
-                      )
+                        style: Styles.textStyle14.copyWith(
+                          color: kprimaryColor,
+                        ),
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ],

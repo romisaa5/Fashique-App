@@ -5,11 +5,8 @@ import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 void main() {
-  runApp(MaterialApp(
-    home: VerificationScreen(),
-  ));
+  runApp(MaterialApp(home: VerificationScreen()));
 }
 
 class VerificationScreen extends StatefulWidget {
@@ -18,17 +15,16 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
-  List<TextEditingController> controllers =
-      List.generate(5, (index) => TextEditingController());
+  List<TextEditingController> controllers = List.generate(
+    5,
+    (index) => TextEditingController(),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {},
-        ),
+        leading: IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: () {}),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -36,10 +32,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
           spacing: 15,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Check your email",
-              style: Styles.textStyle32,
-            ),
+            Text("Check your email", style: Styles.textStyle32),
             SizedBox(height: 10),
             Text(
               "We sent a reset link to contact@dscode...com\nEnter 5 digit code mentioned in the email",
@@ -78,20 +71,23 @@ class _VerificationScreenState extends State<VerificationScreen> {
                 GoRouter.of(context).push(AppRouter.passwordreset);
               },
               text: "Verify Code",
-              color: KprimaryColor,
+              color: kprimaryColor,
               width: MediaQuery.of(context).size.width,
             ),
             SizedBox(height: 10),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text('Haven’t got the email yet? '),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Resend email",
-                  style: Styles.textStyle14.copyWith(color: KprimaryColor),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Haven’t got the email yet? '),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Resend email",
+                    style: Styles.textStyle14.copyWith(color: kprimaryColor),
+                  ),
                 ),
-              ),
-            ]),
+              ],
+            ),
           ],
         ),
       ),

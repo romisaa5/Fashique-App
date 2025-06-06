@@ -28,12 +28,12 @@ class FavoritesView extends StatelessWidget {
             GridView.builder(
               shrinkWrap: true,
               physics:
-                  NeverScrollableScrollPhysics(), // عشان الـ ScrollView الخارجي هو اللي يتحكم
+                  NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // عدد الأعمدة
+                crossAxisCount: 2, 
                 crossAxisSpacing: 10.w,
                 mainAxisSpacing: 10.h,
-                childAspectRatio: .6, // نسبة العرض للطول
+                childAspectRatio: .6, 
               ),
               itemCount: 6,
               itemBuilder: (context, index) {

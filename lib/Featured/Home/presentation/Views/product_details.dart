@@ -42,11 +42,11 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: [
             widget.product.imageUrl.isNotEmpty
                 ? Image.asset(
-                    widget.product.imageUrl,
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height * .5,
-                    fit: BoxFit.fill,
-                  )
+                  widget.product.imageUrl,
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * .5,
+                  fit: BoxFit.fill,
+                )
                 : Placeholder(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -104,14 +104,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        widget.product.title,
-                        style: Styles.textStyle18,
-                      ),
+                      Text(widget.product.title, style: Styles.textStyle18),
                       Text(
                         ' \$ ${widget.product.price} ',
                         style: Styles.textStyle18,
-                      )
+                      ),
                     ],
                   ),
                   Text(
@@ -123,17 +120,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                     'Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.',
                     style: Styles.textStyle14,
                   ),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  SizedBox(height: 10),
                   CustomButton(
-                      borderreduis: 25,
-                      text: 'Add to cart',
-                      color: KprimaryColor,
-                      width: double.infinity),
-                  SizedBox(
-                    height: 25.h,
-                  )
+                    borderreduis: 25,
+                    text: 'Add to cart',
+                    color: kprimaryColor,
+                    width: double.infinity,
+                  ),
+                  SizedBox(height: 25.h),
                 ],
               ),
             ),

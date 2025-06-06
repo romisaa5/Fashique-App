@@ -4,8 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomcontainerWidget extends StatelessWidget {
-  const CustomcontainerWidget(
-      {super.key,  required this.value, required this.color});
+  const CustomcontainerWidget({
+    super.key,
+    required this.value,
+    required this.color,
+  });
 
   final String value;
   final Color color;
@@ -20,13 +23,16 @@ class CustomcontainerWidget extends StatelessWidget {
           height: 24.h,
           child: DecoratedBox(
             decoration: BoxDecoration(
-                color: color, borderRadius: BorderRadius.circular(24)),
+              color: color,
+              borderRadius: BorderRadius.circular(24),
+            ),
             child: Center(
-                child: Text(
-              value,
-              style: Styles.textStyle12.copyWith(color: KbackgroundColor),
-              textAlign: TextAlign.center,
-            )),
+              child: Text(
+                value,
+                style: Styles.textStyle12.copyWith(color: kBackgroundColor),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
       ),

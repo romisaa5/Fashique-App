@@ -55,7 +55,7 @@ class _LoginViewState extends State<LoginView> {
                     alignment: Alignment.topRight,
                     child: Text(
                       'Forget Passsword ?',
-                      style: Styles.textStyle12.copyWith(color: KprimaryColor),
+                      style: Styles.textStyle12.copyWith(color: kprimaryColor),
                     ),
                   ),
                 ),
@@ -67,7 +67,7 @@ class _LoginViewState extends State<LoginView> {
                     }
                   },
                   text: 'Login',
-                  color: KprimaryColor,
+                  color: kprimaryColor,
                   width: MediaQuery.of(context).size.width,
                 ),
                 SizedBox(height: 10.h),
@@ -96,7 +96,7 @@ class _LoginViewState extends State<LoginView> {
                       child: Text(
                         '   Register',
                         style: Styles.textStyle12.copyWith(
-                          color: KprimaryColor,
+                          color: kprimaryColor,
                         ),
                       ),
                     ),

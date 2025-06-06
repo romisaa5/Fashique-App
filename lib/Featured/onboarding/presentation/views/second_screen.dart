@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
 
@@ -24,7 +23,11 @@ class SecondScreen extends StatelessWidget {
             Spacer(),
             Image.asset('assets/images/onboard2.png'),
             PageIndicator(currentIndex: 1, totalPages: 3),
-            Text('Seamless Shopping Experience', style: Styles.textStyle32, textAlign: TextAlign.center,),
+            Text(
+              'Seamless Shopping Experience',
+              style: Styles.textStyle32,
+              textAlign: TextAlign.center,
+            ),
             Text(
               'Enjoy fast, secure, and hassle-free shopping with multiple payment options',
               style: Styles.textStyle16,
@@ -47,14 +50,14 @@ class SecondScreen extends StatelessWidget {
                   borderreduis: 2,
                   width: 90.w,
                   text: 'Next',
-                  color: KprimaryColor,
+                  color: kprimaryColor,
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.thirdScreen);
                   },
                 ),
               ],
             ),
-            Spacer()
+            Spacer(),
           ],
         ),
       ),

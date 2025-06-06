@@ -3,15 +3,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomConfirmPassword extends StatefulWidget {
-  const CustomConfirmPassword({super.key, this.confirmpasswordFocusNode, required this.confirmpasswordController});
+  const CustomConfirmPassword({
+    super.key,
+    this.confirmpasswordFocusNode,
+    required this.confirmpasswordController,
+  });
   final FocusNode? confirmpasswordFocusNode;
-   final TextEditingController confirmpasswordController;
+  final TextEditingController confirmpasswordController;
   @override
   State<CustomConfirmPassword> createState() => _CustomConfirmPasswordState();
 }
 
 class _CustomConfirmPasswordState extends State<CustomConfirmPassword> {
-    bool isshown = false;
+  bool isshown = false;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -21,8 +25,8 @@ class _CustomConfirmPasswordState extends State<CustomConfirmPassword> {
         }
         return null;
       },
-      
-      focusNode: widget.confirmpasswordFocusNode, 
+
+      focusNode: widget.confirmpasswordFocusNode,
       controller: widget.confirmpasswordController,
       obscureText: !isshown,
       decoration: InputDecoration(
@@ -35,7 +39,7 @@ class _CustomConfirmPasswordState extends State<CustomConfirmPassword> {
           icon: Icon(isshown ? Icons.visibility : Icons.visibility_off),
         ),
         hintText: 'Confirm Password',
-        prefixIcon: const Icon(Icons.lock, color: KprimaryColor),
+        prefixIcon: const Icon(Icons.lock, color: kprimaryColor),
       ),
     );
   }

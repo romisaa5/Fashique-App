@@ -3,11 +3,11 @@ import 'package:e_commerce/constnts.dart';
 
 class CustomTextfieldForEmail extends StatefulWidget {
   final TextEditingController emailController;
-  final FocusNode ?passwordFocusNode; 
+  final FocusNode? passwordFocusNode;
   CustomTextfieldForEmail({
     super.key,
     required this.emailController,
-     this.passwordFocusNode, 
+    this.passwordFocusNode,
   });
 
   @override
@@ -25,13 +25,14 @@ class _CustomTextfieldForEmailState extends State<CustomTextfieldForEmail> {
         if (value == null || value.isEmpty) {
           return 'The field is required';
         }
-        if (!RegExp(r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+').hasMatch(value)) {
+        if (!RegExp(
+          r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+',
+        ).hasMatch(value)) {
           return 'Enter a valid email';
         }
         return null;
       },
       onEditingComplete: () {
-        
         FocusScope.of(context).requestFocus(widget.passwordFocusNode);
       },
       textInputAction: TextInputAction.next,
@@ -39,10 +40,7 @@ class _CustomTextfieldForEmailState extends State<CustomTextfieldForEmail> {
       controller: widget.emailController,
       decoration: InputDecoration(
         hintText: 'Email',
-        prefixIcon: const Icon(
-          Icons.email,
-          color: KprimaryColor,
-        ),
+        prefixIcon: const Icon(Icons.email, color: kprimaryColor),
       ),
     );
   }

@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-
 class ThirdScreen extends StatelessWidget {
   const ThirdScreen({super.key});
 
@@ -24,7 +23,11 @@ class ThirdScreen extends StatelessWidget {
             Spacer(),
             Image.asset('assets/images/onboard3.png'),
             PageIndicator(currentIndex: 2, totalPages: 3),
-            Text( 'Unlock Exclusive Offers', style: Styles.textStyle32, textAlign: TextAlign.center,),
+            Text(
+              'Unlock Exclusive Offers',
+              style: Styles.textStyle32,
+              textAlign: TextAlign.center,
+            ),
             Text(
               'Get special discounts, early access to new arrivals, and rewards just for you',
               style: Styles.textStyle16,
@@ -47,14 +50,14 @@ class ThirdScreen extends StatelessWidget {
                   borderreduis: 2,
                   width: 151.w,
                   text: 'GETSTATED',
-                  color: KprimaryColor,
+                  color: kprimaryColor,
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.welcomeView);
                   },
-                )
+                ),
               ],
             ),
-            Spacer()
+            Spacer(),
           ],
         ),
       ),

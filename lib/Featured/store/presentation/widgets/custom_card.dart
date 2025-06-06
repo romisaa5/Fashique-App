@@ -35,14 +35,14 @@ class CustomCard extends StatelessWidget {
                         height: 200,
                         child: Center(
                           child: CircularProgressIndicator(
-                            color: KprimaryColor,
+                            color: kprimaryColor,
                           ),
                         ),
                       ),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               ),
-              CustomcontainerWidget(value: '20%', color: KprimaryColor),
+              CustomcontainerWidget(value: '20%', color: kprimaryColor),
             ],
           ),
           Padding(
@@ -58,7 +58,7 @@ class CustomCard extends StatelessWidget {
                     StarsRate(),
                     Text(
                       '120 \$',
-                      style: Styles.textStyle14.copyWith(color: KprimaryColor),
+                      style: Styles.textStyle14.copyWith(color: kprimaryColor),
                     ),
                     Text(
                       '150\$',
@@ -79,7 +79,7 @@ class CustomCard extends StatelessWidget {
                     ),
                     CustomButton(
                       text: 'Buy Now',
-                      color: KprimaryColor,
+                      color: kprimaryColor,
                       width: 110.w,
                       borderreduis: 16,
                     ),

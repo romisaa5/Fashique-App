@@ -51,7 +51,7 @@ class AppTextFormField extends StatelessWidget {
       validator: validator,
       onChanged: onChanged,
       controller: controller,
-      cursorColor: KprimaryColor,
+      cursorColor: kprimaryColor,
       decoration: InputDecoration(
         isDense: true,
         contentPadding:

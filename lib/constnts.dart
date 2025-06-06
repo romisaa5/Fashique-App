@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-const KprimaryColor = Color(0xffDB3022);
-const KsecondryColor = Color(0xff000000);
-const KbackgroundColor = Color(0xffF9F9F9);
+const kprimaryColor = Color(0xffDB3022);
+const kSecondryColor = Color(0xff000000);
+const kBackgroundColor = Color(0xffF9F9F9);

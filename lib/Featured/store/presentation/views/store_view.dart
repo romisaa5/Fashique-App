@@ -20,7 +20,7 @@ class StoreView extends StatelessWidget {
             AppTextFormField(
               suffixIcon: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: KprimaryColor,
+                  backgroundColor: kprimaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6.r),
                   ),

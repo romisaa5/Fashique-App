@@ -21,7 +21,7 @@ class CatogeriesList extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 35,
-                  backgroundColor: KsecondryColor,
+                  backgroundColor: kSecondryColor,
                   foregroundColor: Colors.white,
                   child: Icon(Category.categories[index].icon, size: 30.sp),
                 ),

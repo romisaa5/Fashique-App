@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
 
@@ -16,7 +15,6 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +27,12 @@ class _FirstScreenState extends State<FirstScreen> {
           children: [
             Spacer(),
             Image.asset('assets/images/onboard1.png'),
-             PageIndicator(currentIndex: 0, totalPages: 3),
-            Text('Discover the Latest Fashion Trends', style: Styles.textStyle32,textAlign: TextAlign.center,),
+            PageIndicator(currentIndex: 0, totalPages: 3),
+            Text(
+              'Discover the Latest Fashion Trends',
+              style: Styles.textStyle32,
+              textAlign: TextAlign.center,
+            ),
             Text(
               'Shop the hottest styles, from casual to chic, all in one place',
               style: Styles.textStyle16,
@@ -44,15 +46,14 @@ class _FirstScreenState extends State<FirstScreen> {
                   borderreduis: 2,
                   width: 90.w,
                   text: 'Next',
-                  color: KprimaryColor,
+                  color: kprimaryColor,
                   onTap: () {
-                
                     GoRouter.of(context).push(AppRouter.secondScreen);
                   },
-                )
+                ),
               ],
             ),
-            Spacer()
+            Spacer(),
           ],
         ),
       ),

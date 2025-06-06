@@ -68,7 +68,7 @@ class _RegisterViewState extends State<RegisterView> {
                     }
                   },
                   text: 'Register',
-                  color: KprimaryColor,
+                  color: kprimaryColor,
                   width: MediaQuery.of(context).size.width,
                 ),
                 CustomDevider(),
@@ -95,7 +95,7 @@ class _RegisterViewState extends State<RegisterView> {
                       child: Text(
                         '   Login',
                         style: Styles.textStyle12.copyWith(
-                          color: KprimaryColor,
+                          color: kprimaryColor,
                         ),
                       ),
                     ),

@@ -27,7 +27,7 @@ class CustomBottomNavBar extends StatelessWidget {
             body: views[cubit.selectIndex],
             bottomNavigationBar: Container(
               decoration: BoxDecoration(
-                color: KbackgroundColor,
+                color: kBackgroundColor,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black12,
@@ -51,7 +51,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   color: Colors.grey,
                   activeColor: Colors.white,
                   iconSize: 24,
-                  tabBackgroundColor: KprimaryColor,
+                  tabBackgroundColor: kprimaryColor,
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
                   tabs: [
                     GButton(icon: Icons.home, text: 'Home'),

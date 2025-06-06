@@ -4,8 +4,8 @@ import 'package:e_commerce/constnts.dart';
 class AppTheme {
   static ThemeData get theme {
     return ThemeData(
-      scaffoldBackgroundColor: KbackgroundColor,
-      primaryColor: KprimaryColor,
+      scaffoldBackgroundColor: kBackgroundColor,
+      primaryColor: kprimaryColor,
       inputDecorationTheme: InputDecorationTheme(
         hintStyle: TextStyle(color: Colors.grey),
         focusedBorder: OutlineInputBorder(
@@ -22,12 +22,12 @@ class AppTheme {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: BorderSide(color: KprimaryColor),
+          borderSide: BorderSide(color: kprimaryColor),
         ),
-        focusedErrorBorder:OutlineInputBorder(
+        focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: BorderSide(color: KprimaryColor),
-        ), 
+          borderSide: BorderSide(color: kprimaryColor),
+        ),
       ),
     );
   }
