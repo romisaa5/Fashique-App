@@ -1,13 +1,15 @@
+import 'package:e_commerce/Featured/Home/presentation/widgets/comments_list.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/drop_down_menu.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/stars_rate.dart';
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/constnts.dart';
-import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/core/widgets/custom_favorite_icon.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key, required this.product});
@@ -18,27 +20,14 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
-  bool isFavorite = false;
   String? selectedValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 2,
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text(widget.product.title, style: Styles.textStyle18),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.share))],
-        leading: IconButton(
-          onPressed: () {
-            GoRouter.of(context).pop(AppRouter.bottnavbar);
-          },
-          icon: Icon(Icons.arrow_back_ios),
-        ),
-      ),
+      appBar: CustomAppBar(text: widget.product.title),
       body: SingleChildScrollView(
         child: Column(
-          spacing: 10,
+          spacing: 10.h,
           children: [
             widget.product.imageUrl.isNotEmpty
                 ? Image.asset(
@@ -51,7 +40,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
-                spacing: 5,
+                spacing: 10.h,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -83,20 +72,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             shape: BoxShape.circle,
                             color: Colors.white,
                           ),
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                isFavorite = !isFavorite;
-                              });
-                            },
-                            icon: Icon(
-                              isFavorite
-                                  ? Icons.favorite
-                                  : Icons.favorite_border_outlined,
-                              color: isFavorite ? Colors.red : Colors.black45,
-                              size: 18,
-                            ),
-                          ),
+                          child: CustomFavoriteIcon(),
                         ),
                       ),
                     ],
@@ -128,6 +104,24 @@ class _ProductDetailsState extends State<ProductDetails> {
                     width: double.infinity,
                   ),
                   SizedBox(height: 25.h),
+                  Row(
+                    spacing: 5.w,
+                    children: [
+                      Text('Write a Review', style: Styles.textStyle18),
+                      Icon(Icons.edit, color: kSecondryColor),
+                    ],
+                  ),
+                  SizedBox(height: 5.h),
+                  AppTextFormField(
+                    hintText: 'Type your Feedback....',
+                    suffixIcon: IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.send, color: kprimaryColor),
+                    ),
+                  ),
+                  SizedBox(height: 20.h),
+                  Text('Reviews', style: Styles.textStyle18),
+                  CommentsList(),
                 ],
               ),
             ),
