@@ -1,7 +1,7 @@
 import 'package:e_commerce/Featured/Auth/Forget%20password/presentation/views/forget_password.dart';
 import 'package:e_commerce/Featured/Auth/Forget%20password/presentation/views/password_reset.dart';
 import 'package:e_commerce/Featured/Auth/Forget%20password/presentation/views/set_new_password.dart';
-import 'package:e_commerce/Featured/Auth/Forget%20password/presentation/views/verificationScreen.dart';
+import 'package:e_commerce/Featured/Auth/Forget%20password/presentation/views/verification_screen.dart';
 import 'package:e_commerce/Featured/Auth/Login/presentation/views/login_view.dart';
 import 'package:e_commerce/Featured/Auth/Register/presentation/views/register_view.dart';
 import 'package:e_commerce/Featured/Home/presentation/Views/product_details.dart';

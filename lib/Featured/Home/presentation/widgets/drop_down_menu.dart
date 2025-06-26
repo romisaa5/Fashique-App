@@ -4,7 +4,11 @@ class DropDown extends StatefulWidget {
   final List<String> items;
   final String hinttext;
   final void Function(String? value) onChanged;
-  DropDown({required this.items, required this.hinttext, required this.onChanged});
+  const DropDown({
+    required this.items,
+    required this.hinttext,
+    required this.onChanged,
+  });
 
   @override
   State<DropDown> createState() => _DropDownState();
@@ -21,17 +25,16 @@ class _DropDownState extends State<DropDown> {
           value: null,
           decoration: InputDecoration(
             hintText: widget.hinttext,
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
             contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
           ),
-          items: widget.items.map((String item) {
-            return DropdownMenuItem<String>(
-              value: item,
-              child: Text(item),
-            );
-          }).toList(),
-          onChanged: widget.onChanged
+          items:
+              widget.items.map((String item) {
+                return DropdownMenuItem<String>(value: item, child: Text(item));
+              }).toList(),
+          onChanged: widget.onChanged,
         ),
       ),
     );

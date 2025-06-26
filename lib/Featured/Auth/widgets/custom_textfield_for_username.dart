@@ -4,7 +4,7 @@ import 'package:e_commerce/constnts.dart';
 class CustomTextfieldForEmail extends StatefulWidget {
   final TextEditingController emailController;
   final FocusNode? passwordFocusNode;
-  CustomTextfieldForEmail({
+  const CustomTextfieldForEmail({
     super.key,
     required this.emailController,
     this.passwordFocusNode,

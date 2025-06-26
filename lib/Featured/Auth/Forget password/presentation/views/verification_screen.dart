@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
-  List<TextEditingController> controllers = List.generate(
+ static List<TextEditingController> controllers = List.generate(
     5,
     (index) => TextEditingController(),
   );
