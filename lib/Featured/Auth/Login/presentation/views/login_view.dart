@@ -1,11 +1,11 @@
 import 'package:e_commerce/constnts.dart';
+import 'package:e_commerce/core/helper/validation_methods.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_button_signup_login.dart';
-import 'package:e_commerce/Featured/Auth/widgets/custom_devider.dart';
-import 'package:e_commerce/Featured/Auth/widgets/custom_textfield_for_password.dart';
-import 'package:e_commerce/Featured/Auth/widgets/custom_textfield_for_username.dart';
+import 'package:e_commerce/core/widgets/custom_devider.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -38,14 +38,17 @@ class _LoginViewState extends State<LoginView> {
                 Text('Login', style: Styles.textStyle32),
                 SizedBox(height: 15.h),
                 Text('Email', style: Styles.textStyle14),
-                CustomTextfieldForEmail(
-                  passwordFocusNode: passwordFocusNode,
-                  emailController: emailController,
+                AppTextFormField(
+                  hintText: 'Email',
+                  validator: (value) => ValidationMethods.validateEmail(value),
+                  controller: passwordController,
                 ),
                 Text('Password', style: Styles.textStyle14),
-                CustomTextfieldforPassword(
-                  passwordFocusNode: passwordFocusNode,
-                  passwordController: passwordController,
+                AppTextFormField(
+                  hintText: 'Password',
+                  validator:
+                      (value) => ValidationMethods.validatePassword(value),
+                  controller: passwordController,
                 ),
                 TextButton(
                   onPressed: () {

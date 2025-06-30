@@ -12,7 +12,6 @@ void showCustomBottomSheet(BuildContext context, String title, String hintText) 
     final TextEditingController confirmPasswordController =
         TextEditingController();
     final TextEditingController nameController = TextEditingController();
-
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,

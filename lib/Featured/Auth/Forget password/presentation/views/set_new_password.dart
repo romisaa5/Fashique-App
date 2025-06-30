@@ -1,7 +1,8 @@
 import 'package:e_commerce/constnts.dart';
+import 'package:e_commerce/core/helper/validation_methods.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/Featured/Auth/widgets/custom_textfield_for_password.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,10 +37,17 @@ class _SetNewPasswordState extends State<SetNewPassword> {
               style: Styles.textStyle14.copyWith(color: Colors.grey),
             ),
             Text('Password', style: Styles.textStyle14),
-            CustomTextfieldforPassword(passwordController: passwordController),
+            AppTextFormField(
+              hintText: 'Password',
+              validator: (value) => ValidationMethods.validatePassword(value),
+              controller: passwordController,
+            ),
             Text('Confirm Password', style: Styles.textStyle14),
-            CustomTextfieldforPassword(
-              passwordController: confirmpasswordController,
+            AppTextFormField(
+              hintText: 'Confirm Password',
+              validator:
+                  (value) => ValidationMethods.validateConfirmPassword(value),
+              controller: confirmpasswordController,
             ),
             SizedBox(height: 15),
             CustomButton(

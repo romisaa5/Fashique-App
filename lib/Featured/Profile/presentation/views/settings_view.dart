@@ -1,4 +1,4 @@
-import 'package:e_commerce/Featured/Profile/helper/modelbottomsheet_for_edit_setting.dart';
+import 'package:e_commerce/core/helper/custom_bottom_sheet_for_edit_setting.dart';
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';

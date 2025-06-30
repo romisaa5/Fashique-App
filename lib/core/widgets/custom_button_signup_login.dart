@@ -12,7 +12,6 @@ class CustomButtonSignupLogin extends StatelessWidget {
       this.onTap});
   final String text;
   final Color color;
-
   final double width;
   final String imageIcon;
   final void Function()? onTap;

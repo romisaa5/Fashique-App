@@ -1,8 +1,9 @@
 import 'package:e_commerce/constnts.dart';
+import 'package:e_commerce/core/helper/validation_methods.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:e_commerce/core/utils/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/Featured/Auth/widgets/custom_textfield_for_username.dart';
+import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,7 +34,11 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               style: Styles.textStyle16,
             ),
             Text('Your Email ', style: Styles.textStyle14),
-            CustomTextfieldForEmail(emailController: emailController),
+            AppTextFormField(
+              hintText: 'Email',
+              validator: (value) => ValidationMethods.validateEmail(value),
+              controller: emailController,
+            ),
             CustomButton(
               borderreduis: 2,
               text: 'Reset Password',
