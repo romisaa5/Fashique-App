@@ -1,3 +1,4 @@
+import 'package:e_commerce/Featured/Favorites/presentation/views/widgets/list_of_categories.dart';
 import 'package:e_commerce/Featured/store/presentation/widgets/list_of_cards.dart';
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
@@ -14,7 +15,7 @@ class StoreView extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 10.h,
+          spacing: 5.h,
           children: [
             SizedBox(height: 20.h),
             AppTextFormField(
@@ -30,13 +31,15 @@ class StoreView extends StatelessWidget {
               ),
               hintText: 'Search in Store......',
             ),
-            Center(
-              child: Image.asset(
-                'assets/images/store.png',
-                width: 280,
-                height: 280,
-              ),
-            ),
+            SizedBox(height: 10.h),
+            ListOfCategories(),
+            // Center(
+            //   child: Image.asset(
+            //     'assets/images/store.png',
+            //     width: 280,
+            //     height: 280,
+            //   ),
+            // ),
             ListOfCards(),
           ],
         ),

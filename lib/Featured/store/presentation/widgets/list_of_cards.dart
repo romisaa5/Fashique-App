@@ -13,7 +13,7 @@ class ListOfCards extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.h),
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 6.h),
           child: CustomCard(),
         );
       },
