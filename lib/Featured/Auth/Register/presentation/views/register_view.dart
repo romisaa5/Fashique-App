@@ -1,9 +1,9 @@
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/helper/validation_methods.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/helper/extentions.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/core/widgets/custom_button_signup_login.dart';
 import 'package:e_commerce/core/widgets/custom_devider.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +25,22 @@ class _RegisterViewState extends State<RegisterView> {
   final passwordFocusNode = FocusNode();
   final confirmpasswordFocusNode = FocusNode();
   final _formKey = GlobalKey<FormState>();
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    passwordFocusNode.dispose();
+    confirmpasswordFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 18.0),
+        padding: EdgeInsets.symmetric(horizontal: 24.0.h, vertical: 18.0.w),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
@@ -39,9 +48,9 @@ class _RegisterViewState extends State<RegisterView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8.h,
               children: [
-                SizedBox(height: 25.h),
+                25.ph,
                 Text('Register', style: Styles.textStyle32),
-                SizedBox(height: 5.h),
+                5.ph,
                 Text('Email', style: Styles.textStyle14),
                 AppTextFormField(
                   hintText: 'Email',
@@ -77,14 +86,16 @@ class _RegisterViewState extends State<RegisterView> {
                   width: MediaQuery.of(context).size.width,
                 ),
                 CustomDevider(),
-                CustomButtonSignupLogin(
-                  imageIcon: 'assets/images/icons-google.png',
+                CustomButton(
+                  borderreduis: 2,
+                  imagePath: 'assets/images/icons-google.png',
                   text: 'Register with Google',
                   color: Color(0xff000000),
                   width: MediaQuery.of(context).size.width,
                 ),
-                CustomButtonSignupLogin(
-                  imageIcon: 'assets/images/icons-facebook-logo.png',
+                CustomButton(
+                  borderreduis: 2,
+                  imagePath: 'assets/images/icons-facebook-logo.png',
                   text: 'Register with Facebook',
                   color: Color(0xff000000),
                   width: MediaQuery.of(context).size.width,
@@ -106,8 +117,7 @@ class _RegisterViewState extends State<RegisterView> {
                     ),
                   ],
                 ),
-
-                SizedBox(height: 10.h),
+                10.ph,
               ],
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:e_commerce/constnts.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {

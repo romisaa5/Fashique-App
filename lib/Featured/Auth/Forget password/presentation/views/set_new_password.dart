@@ -1,6 +1,6 @@
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/helper/validation_methods.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';

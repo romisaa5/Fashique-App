@@ -1,9 +1,9 @@
 import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/helper/validation_methods.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/helper/extentions.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
-import 'package:e_commerce/core/widgets/custom_button_signup_login.dart';
 import 'package:e_commerce/core/widgets/custom_devider.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +23,18 @@ class _LoginViewState extends State<LoginView> {
   final _formkey = GlobalKey<FormState>();
   final passwordFocusNode = FocusNode();
   @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    passwordFocusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 18.0),
+        padding: EdgeInsets.symmetric(horizontal: 24.0.h, vertical: 18.0.w),
         child: Form(
           key: _formkey,
           child: SingleChildScrollView(
@@ -34,9 +42,9 @@ class _LoginViewState extends State<LoginView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8.h,
               children: [
-                SizedBox(height: 25.h),
+                25.ph,
                 Text('Login', style: Styles.textStyle32),
-                SizedBox(height: 15.h),
+                15.ph,
                 Text('Email', style: Styles.textStyle14),
                 AppTextFormField(
                   hintText: 'Email',
@@ -73,17 +81,19 @@ class _LoginViewState extends State<LoginView> {
                   color: kprimaryColor,
                   width: MediaQuery.of(context).size.width,
                 ),
-                SizedBox(height: 10.h),
+                10.ph,
                 CustomDevider(),
-                SizedBox(height: 10.h),
-                CustomButtonSignupLogin(
-                  imageIcon: 'assets/images/icons-google.png',
+                10.ph,
+                CustomButton(
+                  borderreduis: 2,
+                  imagePath: 'assets/images/icons-google.png',
                   text: 'Login with Google',
                   color: Color(0xff000000),
                   width: MediaQuery.of(context).size.width,
                 ),
-                CustomButtonSignupLogin(
-                  imageIcon: 'assets/images/icons-facebook-logo.png',
+                CustomButton(
+                  borderreduis: 2,
+                  imagePath: 'assets/images/icons-facebook-logo.png',
                   text: 'Login with Facebook',
                   color: Color(0xff000000),
                   width: MediaQuery.of(context).size.width,
@@ -105,7 +115,7 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15.h),
+                15.ph,
               ],
             ),
           ),

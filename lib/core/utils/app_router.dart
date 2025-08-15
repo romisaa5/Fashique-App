@@ -8,18 +8,15 @@ import 'package:e_commerce/Featured/Home/presentation/Views/product_details.dart
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/Featured/Profile/presentation/views/my_orders_view.dart';
 import 'package:e_commerce/Featured/Profile/presentation/views/settings_view.dart';
-import 'package:e_commerce/Featured/onboarding/presentation/views/first_screen.dart';
-import 'package:e_commerce/Featured/onboarding/presentation/views/second_screen.dart';
-import 'package:e_commerce/Featured/onboarding/presentation/views/third_screen.dart';
+import 'package:e_commerce/Featured/onboarding/presentation/views/onboarding_screen.dart';
 import 'package:e_commerce/Featured/onboarding/presentation/views/welcome_view.dart';
 import 'package:e_commerce/Featured/NavBar/presentation/views/Bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class AppRouter {
   static final firstScreen = '/onboardingscreen1';
-  static final thirdScreen = '/onboardingscreen3';
-  static final secondScreen = '/onboardingscreen2';
   static final welcomeView = '/welcomeview';
   static final loginView = '/loginview';
   static final registerView = '/registerview';
@@ -31,52 +28,67 @@ abstract class AppRouter {
   static final detailsScreen = '/detailsScreen';
   static final settingsScreen = '/settingsScreen';
   static final ordersScreen = '/ordersScreen';
-  static final router = GoRouter(
-    initialLocation: bottnavbar,
-    routes: [
-      GoRoute(path: firstScreen, builder: (context, state) => FirstScreen()),
-      GoRoute(path: secondScreen, builder: (context, state) => SecondScreen()),
-      GoRoute(path: thirdScreen, builder: (context, state) => ThirdScreen()),
-      GoRoute(path: welcomeView, builder: (context, state) => WelcomeView()),
-      GoRoute(path: loginView, builder: (context, state) => LoginView()),
-      GoRoute(path: registerView, builder: (context, state) => RegisterView()),
-      GoRoute(
-        path: forgetpasssword,
-        builder: (context, state) => ForgetPassword(),
-      ),
-      GoRoute(
-        path: verificationScreen,
-        builder: (context, state) => VerificationScreen(),
-      ),
-      GoRoute(
-        path: passwordreset,
-        builder: (context, state) => PasswordReset(),
-      ),
-      GoRoute(
-        path: setnewpassword,
-        builder: (context, state) => SetNewPassword(),
-      ),
-      GoRoute(
-        path: bottnavbar,
-        builder: (context, state) => CustomBottomNavBar(),
-      ),
-      GoRoute(
-        path: settingsScreen,
-        builder: (context, state) => SettingsView(),
-      ),
-      GoRoute(path: ordersScreen, builder: (context, state) => MyOrdersView()),
-      GoRoute(
-        path: detailsScreen,
-        builder: (context, state) {
-          final product = state.extra as Product?;
-          if (product == null) {
-            return Scaffold(
-              body: Center(child: Text("Error: No product data")),
-            );
-          }
-          return ProductDetails(product: product);
-        },
-      ),
-    ],
-  );
+
+  static late final GoRouter router;
+
+  static Future<void> initRouter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool seenOnBoarding = prefs.getBool("onBoardingSeen") ?? false;
+
+    router = GoRouter(
+      initialLocation: seenOnBoarding ? welcomeView : firstScreen,
+      routes: [
+        GoRoute(
+          path: firstScreen,
+          builder: (context, state) => OnBoardingScreen(),
+        ),
+        GoRoute(path: welcomeView, builder: (context, state) => WelcomeView()),
+        GoRoute(path: loginView, builder: (context, state) => LoginView()),
+        GoRoute(
+          path: registerView,
+          builder: (context, state) => RegisterView(),
+        ),
+        GoRoute(
+          path: forgetpasssword,
+          builder: (context, state) => ForgetPassword(),
+        ),
+        GoRoute(
+          path: verificationScreen,
+          builder: (context, state) => VerificationScreen(),
+        ),
+        GoRoute(
+          path: passwordreset,
+          builder: (context, state) => PasswordReset(),
+        ),
+        GoRoute(
+          path: setnewpassword,
+          builder: (context, state) => SetNewPassword(),
+        ),
+        GoRoute(
+          path: bottnavbar,
+          builder: (context, state) => CustomBottomNavBar(),
+        ),
+        GoRoute(
+          path: settingsScreen,
+          builder: (context, state) => SettingsView(),
+        ),
+        GoRoute(
+          path: ordersScreen,
+          builder: (context, state) => MyOrdersView(),
+        ),
+        GoRoute(
+          path: detailsScreen,
+          builder: (context, state) {
+            final product = state.extra as Product?;
+            if (product == null) {
+              return Scaffold(
+                body: Center(child: Text("Error: No product data")),
+              );
+            }
+            return ProductDetails(product: product);
+          },
+        ),
+      ],
+    );
+  }
 }

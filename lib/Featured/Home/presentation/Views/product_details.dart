@@ -3,7 +3,7 @@ import 'package:e_commerce/Featured/Home/presentation/widgets/drop_down_menu.dar
 import 'package:e_commerce/Featured/Home/presentation/widgets/stars_rate.dart';
 import 'package:e_commerce/Featured/Home/presentation/models/product.dart';
 import 'package:e_commerce/constnts.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/core/widgets/custom_favorite_icon.dart';

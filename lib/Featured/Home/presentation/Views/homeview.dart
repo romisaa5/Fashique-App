@@ -4,7 +4,7 @@ import 'package:e_commerce/Featured/Home/presentation/widgets/custom_build_heade
 import 'package:e_commerce/Featured/Home/presentation/widgets/custom_list_new_items.dart';
 import 'package:e_commerce/Featured/Home/presentation/widgets/custom_list_sale_items.dart';
 import 'package:e_commerce/constnts.dart';
-import 'package:e_commerce/core/utils/styles.dart';
+import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
