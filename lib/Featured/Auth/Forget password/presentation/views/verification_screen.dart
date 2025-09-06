@@ -15,7 +15,7 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
- static List<TextEditingController> controllers = List.generate(
+ List<TextEditingController> controllers = List.generate(
     5,
     (index) => TextEditingController(),
   );

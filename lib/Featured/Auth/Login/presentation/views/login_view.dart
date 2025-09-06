@@ -49,7 +49,7 @@ class _LoginViewState extends State<LoginView> {
                 AppTextFormField(
                   hintText: 'Email',
                   validator: (value) => ValidationMethods.validateEmail(value),
-                  controller: passwordController,
+                  controller: emailController,
                 ),
                 Text('Password', style: Styles.textStyle14),
                 AppTextFormField(

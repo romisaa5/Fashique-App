@@ -34,9 +34,8 @@ abstract class AppRouter {
   static Future<void> initRouter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool seenOnBoarding = prefs.getBool("onBoardingSeen") ?? false;
-
     router = GoRouter(
-      initialLocation: seenOnBoarding ? welcomeView : firstScreen,
+      initialLocation: seenOnBoarding ? bottnavbar : firstScreen,
       routes: [
         GoRoute(
           path: firstScreen,
