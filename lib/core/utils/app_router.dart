@@ -4,6 +4,8 @@ import 'package:e_commerce/features/auth/forget%20password/presentation/views/se
 import 'package:e_commerce/features/auth/forget%20password/presentation/views/verification_screen.dart';
 import 'package:e_commerce/features/auth/login/presentation/views/login_view.dart';
 import 'package:e_commerce/features/auth/register/presentation/views/register_view.dart';
+import 'package:e_commerce/features/cart/presentation/views/done_payment_view.dart';
+import 'package:e_commerce/features/cart/presentation/views/payment_details_view.dart';
 import 'package:e_commerce/features/home/data/models/product.dart';
 import 'package:e_commerce/features/home/presentation/ui/views/product_details.dart';
 import 'package:e_commerce/features/nav_bar/presentation/views/bottom_nav_bar.dart';
@@ -28,14 +30,14 @@ abstract class AppRouter {
   static final detailsScreen = '/detailsScreen';
   static final settingsScreen = '/settingsScreen';
   static final ordersScreen = '/ordersScreen';
-
+  static final paymentDetailsView = '/paymentDetailsView';
+  static final donePaymentView = '/donePaymentView';
   static late final GoRouter router;
-
   static Future<void> initRouter() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool seenOnBoarding = prefs.getBool("onBoardingSeen") ?? false;
     router = GoRouter(
-      initialLocation: seenOnBoarding ? firstScreen : loginView,
+      initialLocation: bottnavbar,
       routes: [
         GoRoute(
           path: firstScreen,
@@ -74,6 +76,14 @@ abstract class AppRouter {
         GoRoute(
           path: ordersScreen,
           builder: (context, state) => MyOrdersView(),
+        ),
+        GoRoute(
+          path: paymentDetailsView,
+          builder: (context, state) => PaymentDetailsView(),
+        ),
+        GoRoute(
+          path: donePaymentView,
+          builder: (context, state) => DonePaymentView(),
         ),
         GoRoute(
           path: detailsScreen,

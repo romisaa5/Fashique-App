@@ -1,9 +1,10 @@
+import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/helper/extentions.dart';
 import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/custom_cart_card.dart';
+import 'package:e_commerce/features/cart/presentation/widgets/payments_methods_bottomsheet.dart';
 import 'package:e_commerce/features/home/data/models/product.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -69,7 +70,18 @@ class _MyCartViewState extends State<MyCartView> {
               ],
             ),
             24.ph,
-            CustomButton(text: 'CHECK OUT'),
+            CustomButton(
+              text: 'CHECK OUT',
+              onTap: () {
+                showModalBottomSheet(
+                  backgroundColor: kBackgroundColor,
+                  context: context,
+                  builder: (context) {
+                    return PaymentsMethodsBottomsheet();
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCartCard extends StatelessWidget {
   final Product product;
-  final VoidCallback onQuantityChanged; // جديد
+  final VoidCallback onQuantityChanged;
 
   const CustomCartCard({
     super.key,
