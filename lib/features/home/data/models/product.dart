@@ -7,7 +7,7 @@ class Product {
   final String category;
   final int? rate;
   final String color;
- int quantity;
+  int quantity;
   final String size;
 
   Product(

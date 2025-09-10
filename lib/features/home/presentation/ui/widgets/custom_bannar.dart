@@ -27,10 +27,12 @@ class CustomBannar extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           child: Text(
             'Street Clothes',
-            style: Styles.textStyle32
-                .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            style: Styles.textStyle32.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        )
+        ),
       ],
     );
   }

@@ -34,7 +34,7 @@ class DonePaymentView extends StatelessWidget {
               left: 125.w,
               child: CircleAvatar(
                 radius: 50,
-                backgroundColor: Color(0xffD9D9D9),
+                backgroundColor: Color(0xffededed),
               ),
             ),
             Positioned(

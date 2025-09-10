@@ -2,10 +2,13 @@ import 'package:e_commerce/constnts.dart';
 import 'package:e_commerce/core/helper/extentions.dart';
 import 'package:e_commerce/core/theme/styles.dart';
 import 'package:e_commerce/core/widgets/custom_button.dart';
+import 'package:e_commerce/features/cart/data/repos/checkout_repo_impl.dart';
+import 'package:e_commerce/features/cart/presentation/manager/stripe_payment/stripe_payment_cubit.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/custom_cart_card.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/payments_methods_bottomsheet.dart';
 import 'package:e_commerce/features/home/data/models/product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCartView extends StatefulWidget {
@@ -77,7 +80,11 @@ class _MyCartViewState extends State<MyCartView> {
                   backgroundColor: kBackgroundColor,
                   context: context,
                   builder: (context) {
-                    return PaymentsMethodsBottomsheet();
+                    return BlocProvider(
+                      create:
+                          (context) => StripePaymentCubit(CheckoutRepoImpl()),
+                      child: PaymentsMethodsBottomsheet(),
+                    );
                   },
                 );
               },

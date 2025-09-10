@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/helper/extentions.dart';
 import 'package:e_commerce/features/cart/presentation/widgets/custom_payment_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

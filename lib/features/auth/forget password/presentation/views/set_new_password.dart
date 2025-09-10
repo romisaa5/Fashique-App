@@ -20,7 +20,7 @@ class _SetNewPasswordState extends State<SetNewPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
+      appBar: AppBar(
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);

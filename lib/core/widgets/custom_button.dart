@@ -13,6 +13,7 @@ class CustomButton extends StatelessWidget {
     this.onTap,
     this.imagePath,
     this.height,
+    this.isLoading = false,
   });
 
   final String text;
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
   final double? borderreduis;
   final void Function()? onTap;
   final String? imagePath;
-
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,11 +43,13 @@ class CustomButton extends StatelessWidget {
                 Image.asset(imagePath!, height: 20.h, width: 20.h),
                 SizedBox(width: 8.w),
               ],
-              Text(
-                text,
-                style: Styles.textStyle16.copyWith(color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
+              isLoading
+                  ? Center(child: CircularProgressIndicator(color: Colors.grey))
+                  : Text(
+                    text,
+                    style: Styles.textStyle16.copyWith(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
             ],
           ),
         ),

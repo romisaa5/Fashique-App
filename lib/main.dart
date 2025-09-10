@@ -1,10 +1,13 @@
 import 'package:e_commerce/core/theme/app_theme.dart';
+import 'package:e_commerce/core/utils/api_keys.dart';
 import 'package:e_commerce/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey = ApiKeys.stripepuplisedhKey;
   await AppRouter.initRouter();
   runApp(FashiqueApp());
 }

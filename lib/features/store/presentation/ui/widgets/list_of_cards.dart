@@ -9,7 +9,7 @@ class ListOfCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true, 
+      shrinkWrap: true,
       itemCount: 10,
       itemBuilder: (context, index) {
         return Padding(
@@ -20,4 +20,3 @@ class ListOfCards extends StatelessWidget {
     );
   }
 }
-

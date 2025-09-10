@@ -14,7 +14,7 @@ class _StarsRateState extends State<StarsRate> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min, 
+      mainAxisSize: MainAxisSize.min,
       children: [
         Rate(
           iconSize: 14,
@@ -47,13 +47,13 @@ class _StarsRateState extends State<StarsRate> {
               starColor = Colors.grey;
             }
 
-            return Icon(Icons.star, color: starColor, size: 14); 
+            return Icon(Icons.star, color: starColor, size: 14);
           },
         ),
-        SizedBox(width: 4), 
+        SizedBox(width: 4),
         Text(
           '(${_rating.toStringAsFixed(1)})',
-          style: TextStyle(color: Colors.grey, fontSize: 12), 
+          style: TextStyle(color: Colors.grey, fontSize: 12),
         ),
       ],
     );

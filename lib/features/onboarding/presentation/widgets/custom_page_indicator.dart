@@ -2,12 +2,15 @@ import 'package:e_commerce/features/onboarding/presentation/widgets/custom_indec
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class PageIndicator extends StatelessWidget {
-  final int currentIndex; 
-  final int totalPages; 
+  final int currentIndex;
+  final int totalPages;
 
-  const PageIndicator({super.key, required this.currentIndex, required this.totalPages});
+  const PageIndicator({
+    super.key,
+    required this.currentIndex,
+    required this.totalPages,
+  });
 
   @override
   Widget build(BuildContext context) {
